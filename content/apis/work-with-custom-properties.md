@@ -38,6 +38,7 @@ First, we need to identify the Connectivity product that you want to create and 
 ```bash
     $curl --version
 ```
+{{< /code >}}
 
 - Retrieve a list of IoT connectivity products with the following cURL command. Replace the values of `<your_tenant_name>` and `<your_api_token>` with your own data.
 
