@@ -13,7 +13,7 @@ Topics covered include:
 - Register your application entity for DMO API communication.
 
 
-## You will learn how to:
+## You will learn how to
 - Create API credentials in the **Application Access Management.**
 - Retrieve an **API Token (Locally).**
 - Register your **Application Entity** to communicate with the DMO.
@@ -26,9 +26,9 @@ Before we begin, make sure that:
 1. You possess a T IoT Hub Account with an Admin role. Having this will grant you access to the CMO and DMO API, enable you to request an API key, and register your application.
 2. You possess an HTTP Client, such as [Postman](https://www.postman.com/) or [cURL](https://curl.se/).
 
-
-> **Note:** This tutorial will refer to the use of cURL. If you use a different platform, the setup might vary.
-
+{{< note "NOTE" >}}
+  - {{< textsm >}}This tutorial will refer to the use of cURL. If you use a different platform, the setup might vary.{{</ textsm >}}
+{{< /note >}}
 
 ## Step 1. Create API credentials in the Application Access Management
 
