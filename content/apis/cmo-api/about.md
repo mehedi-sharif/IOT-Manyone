@@ -2,6 +2,9 @@
 title: About
 weight: 10
 ---
+
+# About
+
 The T IoT Hub **Connectivity Management Orchestrator API** (CMO API) enables applications to retrieve and manage data about IoT connectivity products offered by different operators and related BSS systems in a standardized format using a single set of operations. 
 
 This means that applications can achieve a single view of all IoT products (e.g. SIM cards and associated data connectivity) used by an enterprise, even if they are purchased and managed by different carriers worldwide.
@@ -17,5 +20,7 @@ This API can also be used by IoT applications to enrich IoT device data by integ
 The Connectivity Management Orchestrator API (CMO API) is developed according to the standards defined by the [TM Forum](https://www.tmforum.org/)®.
 
 
-> **Please note**: The Connection Management Orchestrator API (CMO API) is an optional service and is not included with the IoT Hub by default.
 
+{{< note "NOTE" >}}
+  - {{< textsm >}}The Connection Management Orchestrator API (CMO API) is an optional service and is not included with the IoT Hub by default.{{</ textsm >}}
+{{< /note >}}

@@ -2,6 +2,9 @@
 title: Release notes
 weight: 16
 ---
+
+# Release notes
+
 The CMO API is versioned. 
 When a new version of CMO API is released, all customers will be notified by email. The old version will still be supported. 
 

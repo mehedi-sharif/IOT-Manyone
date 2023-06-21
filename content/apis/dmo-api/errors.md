@@ -3,6 +3,8 @@ title: Errors
 weight: 14
 ---
 
+# Errors
+
 ## About
 
 The DMO API will return a variety of errors if anything goes wrong with your API calls. 

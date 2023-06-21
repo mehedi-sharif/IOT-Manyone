@@ -3,6 +3,8 @@ title: Errors
 weight: 17
 ---
 
+# Errors
+
 ## About
 
 The CMO API will return a variety of errors if anything goes wrong with your API calls. 
@@ -34,8 +36,8 @@ Glossary repository
 According to the used platform, the errors’ numbers and resolutions may present variations. 
 Here is a list of platforms we support for your reference:
 
-| **Platform Name** | **Platform Supplier** |
-| ----------------- | --------------------- |
+| Platform Name     | Platform Supplier     |
+| ----------------- |-----------------------|
 | TMSP              | Telekom Deutschland   |
 | ERICSSON          | T-Mobile Austria      |
 | TMUS              | T-Mobile US           |
@@ -43,8 +45,6 @@ Here is a list of platforms we support for your reference:
 | AIRLINQ           | Jio                   |
 | INTELSAT          | Intelsat              |
 | STC               | Saudi Telecom Company |
-
-
 
 # Error repository
 ## 400

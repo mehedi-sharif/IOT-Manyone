@@ -2,6 +2,9 @@
 title: Data Structures
 weight: 14
 ---
+
+# Data Structures
+
 The production specializations used in the CMO API are presented below. They are based on standard classes defined in the SID model, as shown in the following diagram:
 
 ![](https://hub.iot.telekom.com/docs/cmo-api/images/data-structures.png)

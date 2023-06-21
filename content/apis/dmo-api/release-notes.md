@@ -2,6 +2,9 @@
 title: Release notes
 weight: 13
 ---
+
+# Release notes
+
 The DMO API is versioned. 
 When a new version of DMO API is released, all customers will be notified by email. 
 The old version will still be supported. This means that all customers have time to upgrade to a new DMO API version. 
