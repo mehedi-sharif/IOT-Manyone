@@ -3,6 +3,8 @@ title: Key concepts
 weight: 13
 ---
 
+# Key Concepts
+
 ## Products
 
 Connectivity Management Orchestrator API (CMO API) is developed according to standards defined by [TM Forum](https://www.tmforum.org/)®. The CMO API itself is an implementation of the “Product Inventory API” and the resource representation is based on the SID model. A central concept introduced by the model is the product.
