@@ -206,7 +206,9 @@ curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<y
 {{< tab "Example" >}}
 
 {{< code >}}
-Example code here
+```plain
+Please add an output code
+```
 {{< /code >}}
 
 {{< /tab >}}
