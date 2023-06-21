@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://iot-hub-docs.netlify.app/docs/"
+baseURL = "https://iot-manyone.netlify.app/docs/"
 title = "IoT Hub Docs"
 theme = ["iot-hub-docs"]
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
