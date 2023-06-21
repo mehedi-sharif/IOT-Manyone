@@ -111,10 +111,11 @@ Please add an output code
 
 {{< /tabs >}}
 
+
+
+
 - Retrieve an **API Token** with the following cURL command and replace the values of `<your_client_secret>` and `<your_client_id>`
 
-
------
 {{< tabs "code-tab-1" >}}
 
 {{< tab "Copy & paste" >}}
@@ -164,59 +165,8 @@ Please add an output code
 {{< /tab >}}
 
 {{< /tabs >}}
------
+
     
-{{< tabs "code-tab-1" >}}
-
-{{< tab "Copy & paste" >}}
-
-{{< div class="mb-4" >}}optional text Example{{</ div >}}
-
-{{< code >}}
-```bash
-curl --location 'https://iam-br-iot.myiot-t.com/auth/realms/iothub/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials' \
-//Change this with <your_client_secret>
---data-urlencode 'client_secret=<your_client_secret>' \
-//Change this with <your_client_id>
---data-urlencode 'client_id=<your_client_id>' \
---data-urlencode 'scope=openid'
-```
-{{</ code >}}
-
-{{< /tab >}}
-
-{{< tab "Example" >}}
-
-{{< code >}}
-```plain
-Example code here
-```
-{{< /code >}}
-
-{{< /tab >}}
-
-{{< tab "Output" >}}
-
-{{< code >}}
-```bash
-{
-    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4Y1Z5QWdPZW13dHV4VVIwX2x5NEYtWkNzeTVWR1dQakxVaDNkc285anE0In0.eyJleHAiOjE2ODYyOTk3NjIsImlhdCI6MTY4NjI5OTQ2MiwianRpIjoiNzk5NWM0ODYtYjM1YS00OTQxLTlhNGUtM2UyMTYxYTFjZDRkIiwiaXNzIjoiaHR0cHM6Ly9pYW0tYnItaW90Lm15aW90LXQuY29tL2F1dGgvcmVhbG1zL2lvdGh1YiIsInN1YiI6ImE4MDFhNzA4LWI1MGQtNDdiNi04MDZjLTFhZjhjNjBlOWM3NyIsInR5cCI6IkJlYXJlciIsImF6cCI6IjU3MjJlMjM3LWM5M2EtNGJmZi1hM2JkLThjM2Y0YTM4NWFiMyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicm8lY29ubmVjdGlvbi1tYW5hZ2VtZW50LW9yY2hlc3RyYXRvciIsInJ3JWNvbm5lY3Rpb24tbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiLCJybyVkZXZpY2UtbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiLCJydyVkZXZpY2UtbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiXX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJ0ZW5hbnRzIjpbImVvcyJdLCJjbGllbnRIb3N0IjoiMjEzLjIzOS4xMDMuMjM4IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRJZCI6IjU3MjJlMjM3LWM5M2EtNGJmZi1hM2JkLThjM2Y0YTM4NWFiMyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC01NzIyZTIzNy1jOTNhLTRiZmYtYTNiZC04YzNmNGEzODVhYjMiLCJjbGllbnRBZGRyZXNzIjoiMjEzLjIzOS4xMDMuMjM4In0.lbPJu6PMBbmMOClsrmKNd2QhOeH71MORQII7i0WkSmVrPKlS1uWao6Cv1yxwcPIEjH6hXYRwUe1tKhz_HoGELBjWmA8-4WAx1lRxIFXbim-RTe9MmDBOBawKU8qqSN7aRqKewuKsvhmsiY_iSEksw1Pfexi3UNG27BCCb_L3vYvtEeZAgRysecCQXlDwYeHe3XTdMIkAILvB3adiobIRDjmGtx9GjjYPuM-il2aG_813zDXMP0xFUsQqbf2pRUlSRAcWtgeXkISRTvqXVdaeIe7qgN2lCCJB6BwZah5eyEaFQhZKndY2jSHx1wZ8v2x0K85Uj0zIjdlJquHFWMlinw",
-    "expires_in": 300,
-    "refresh_expires_in": 0,
-    "token_type": "Bearer",
-    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4Y1Z5QWdPZW13dHV4VVIwX2x5NEYtWkNzeTVWR1dQakxVaDNkc285anE0In0.eyJleHAiOjE2ODYyOTk3NjIsImlhdCI6MTY4NjI5OTQ2MiwiYXV0aF90aW1lIjowLCJqdGkiOiJiNDJiMGZhZi05ODQ3LTRjMzAtYjY0MS04OGRkODUyNzk0MTciLCJpc3MiOiJodHRwczovL2lhbS1ici1pb3QubXlpb3QtdC5jb20vYXV0aC9yZWFsbXMvaW90aHViIiwiYXVkIjoiNTcyMmUyMzctYzkzYS00YmZmLWEzYmQtOGMzZjRhMzg1YWIzIiwic3ViIjoiYTgwMWE3MDgtYjUwZC00N2I2LTgwNmMtMWFmOGM2MGU5Yzc3IiwidHlwIjoiSUQiLCJhenAiOiI1NzIyZTIzNy1jOTNhLTRiZmYtYTNiZC04YzNmNGEzODVhYjMiLCJhdF9oYXNoIjoicU94aFFHYWszYUtyd2hQTzFOSzZrUSIsImFjciI6IjEiLCJ0ZW5hbnRzIjpbImVvcyJdLCJjbGllbnRIb3N0IjoiMjEzLjIzOS4xMDMuMjM4IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRJZCI6IjU3MjJlMjM3LWM5M2EtNGJmZi1hM2JkLThjM2Y0YTM4NWFiMyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC01NzIyZTIzNy1jOTNhLTRiZmYtYTNiZC04YzNmNGEzODVhYjMiLCJjbGllbnRBZGRyZXNzIjoiMjEzLjIzOS4xMDMuMjM4In0.DMxuG9LrydwAKbjw9ErZMjKj_3WVu1H5azhx_CvbwlnWMWbBdoZHFhsYyVndBJ28Bz6dqYvYMNU3kyTbkzWxqkWtlLo4l5V8F-kkVJv1_OFrf43PFfQ349eAtF_arosXvklLHtiYb927E_JwlcD286BCffpXUK57SPBw_aLKdKdAIvAVo0K9p9PHE47UvzTSmPz2AgenuA4zgd1Xh1enUU8_TNFvgdMTUeWaX2EMx8xOoR74Nx3k0svDkHSbumdYXhIYo5MiLhp-ypklEcfi0xR8jhn-dvqq4GYSbkfHkfTsQobJ1lqZVPZF-NY45MIQhR78u2cEqHjSEVlTUs6oJA",
-    "not-before-policy": 1681129780,
-    "scope": "openid email profile"
-}
-```
-{{< /code >}}
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
 {{< note "NOTE" >}}
   - {{< textsm >}}The API token has an expiration time of 5 minutes (300 seconds).{{</ textsm >}}
 {{< /note >}}
