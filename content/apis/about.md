@@ -26,3 +26,53 @@ Welcome to T IoT Hub, a cutting-edge platform that opens up possibilities for de
 {{</ div >}}
 
 
+## Examples of use
+
+{{< div class="row mb-4" >}}
+  {{< div class="lg:col-4 mb-7" >}}
+
+  {{< image src="images/about/01.png" alt="Smart Manufacturing" webp="false" zoomable="true" >}}
+  {{< markdown >}}
+  **Automation** <br/>
+  
+  {{< textsm >}}
+  Body 2 Regular - Paragraph 3 columns <br/>
+  Automated configuration of IoT devices. Instead of manually configuring each device individually. APIs enable you to apply configurations in a systematic and efficient manner. This saves time, reduces human error, and simplifies the deployment process. 
+  {{</ textsm >}}
+  {{</ markdown >}}
+  
+  {{< button label="Internal Button" link="contact/" class="w-full" style="outline" >}}
+
+  {{</ div >}}
+  {{< div class="lg:col-4 mb-7" >}}
+
+  {{< image src="images/about/02.png" alt="Smart Manufacturing" webp="false" zoomable="true" >}}
+  {{< markdown >}}
+  **Scalability** <br/>
+  
+  {{< textsm >}}
+  Body 2 Regular - Paragraph 3 columns <br/>
+  With APIs, you can configure a large number of devices simultaneously or in a batch. This scalability is crucial when dealing with IoT deployments that involve hundreds or thousands of devices. APIs streamline the configuration process, ensuring consistent settings across the entire fleet of devices.
+  {{</ textsm >}}
+  
+  {{< button label="External Link" link="https://www.google.com/" class="w-full" style="outline" >}}
+  {{</ markdown >}}
+
+  {{</ div >}}
+  {{< div class="lg:col-4 mb-7" >}}
+
+  {{< image src="images/about/03.png" alt="Smart Manufacturing" webp="false" zoomable="true" >}}
+  {{< markdown >}}
+  **Remote Configuration** <br/>
+  
+  {{< textsm >}}
+  Body 2 Regular - Paragraph 3 columns <br/>
+  Configuration of IoT devices over a network connection. This eliminates the need for physical access to each device, making it feasible to configure devices deployed in remote or inaccessible locations. It reduces costs associated with on-site visits and enables updates or changes when needed.
+  {{</ textsm >}}
+  
+  {{< button label="Internal Link" link="contact/" class="w-full" style="outline" >}}
+  {{</ markdown >}}
+
+  {{</ div >}}
+{{</ div >}}
+
