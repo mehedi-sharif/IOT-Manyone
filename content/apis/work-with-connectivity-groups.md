@@ -135,212 +135,242 @@ Please add example
 
 - Find your products with the following cURL command and replace the values of `<your_tenant_name>`,`<your_api_token>`, and `<your_product_id>` with your own data.
 
+{{< tabs "code-tab-1" >}}
 
-    //Enter your tenant name
-    curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v5/<your_tenant_name>/product/find' \
-    --header 'Content-Type: application/json' \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer <your_api_token>' \
-    --data '{
-      //Enter your product ID
-      "iccidList": [
-      "<your_product_id>"
-      ],
-      //Enter your product ID
-      "terminalSNList": [
-        "<your_product_id>"
-      ]
-    }
-    '
+{{< tab "Copy & paste" >}}
 
-Example of output
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
 
+{{< code >}}
+```bash
+//Enter your tenant name
+curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v5/<your_tenant_name>/product/find' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <your_api_token>' \
+--data '{
+//Enter your product ID
+    "iccidList": [
+    "<your_product_id>"
+    ],
+    //Enter your product ID
+    "terminalSNList": [
+    "<your_product_id>"
+    ]
+}'
+```
+{{</ code >}}
 
-    {
-        "entities": [
-            {
-                "id": "INTELSAT-27597",
-                "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597",
-                "status": "ACTIVE",
-                "connectivityType": "SATELLITE",
-                "isBundle": true,
-                "isCustomerVisible": true,
-                "productCharacteristic": [
-                    {
-                        "name": "system",
-                        "value": "INTELSAT"
-                    },
-                    {
-                        "name": "account_index",
-                        "value": "1"
-                    }
-                ],
-                "name": "",
-                "startDate": "2023-05-18T00:00:00.000Z",
-                "billingAccount": {
-                    "id": ""
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Please add example
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```json
+{
+    "entities": [
+        {
+            "id": "INTELSAT-27597",
+            "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597",
+            "status": "ACTIVE",
+            "connectivityType": "SATELLITE",
+            "isBundle": true,
+            "isCustomerVisible": true,
+            "productCharacteristic": [
+                {
+                    "name": "system",
+                    "value": "INTELSAT"
                 },
-                "productOffering": {
-                    "name": "FlexEnterprise Global"
+                {
+                    "name": "account_index",
+                    "value": "1"
+                }
+            ],
+            "name": "",
+            "startDate": "2023-05-18T00:00:00.000Z",
+            "billingAccount": {
+                "id": ""
+            },
+            "productOffering": {
+                "name": "FlexEnterprise Global"
+            },
+            "relatedParty": [
+                {
+                    "id": "340",
+                    "name": "intelsat_test",
+                    "role": "customer"
+                }
+            ],
+            "@baseType": "product",
+            "@type": "IoTConnection",
+            "productRelationship": [
+                {
+                    "type": "BUNDLED",
+                    "product": {
+                        "id": "INTELSAT-27597-terminal",
+                        "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597-terminal",
+                        "isBundle": false,
+                        "isCustomerVisible": true,
+                        "productCharacteristic": [
+                            {
+                                "name": "serialNumber",
+                                "value": "27597"
+                            },
+                            {
+                                "name": "name",
+                                "value": "LW01-Media_Mobil-27597"
+                            },
+                            {
+                                "name": "latitude",
+                                "value": "53.11050000"
+                            },
+                            {
+                                "name": "longitude",
+                                "value": "8.88130000"
+                            },
+                            {
+                                "name": "model",
+                                "value": "TIV-iQDesktop-27597-GS"
+                            },
+                            {
+                                "name": "state",
+                                "value": "synced"
+                            },
+                            {
+                                "name": "mobilityType",
+                                "value": "Fixed"
+                            },
+                            {
+                                "name": "imoNumber",
+                                "value": "0"
+                            },
+                            {
+                                "name": "mmsi",
+                                "value": ""
+                            },
+                            {
+                                "name": "antennaCode",
+                                "value": ""
+                            },
+                            {
+                                "name": "lastUpdated",
+                                "value": "2023-05-18T15:56:51.000Z"
+                            },
+                            {
+                                "name": "lastSync",
+                                "value": "2023-05-18T15:56:51.000Z"
+                            }
+                        ],
+                        "customProperty": [],
+                        "@baseType": "product",
+                        "@type": "terminal",
+                        "status": "ACTIVE"
+                    }
                 },
-                "relatedParty": [
-                    {
-                        "id": "340",
-                        "name": "intelsat_test",
-                        "role": "customer"
+                {
+                    "type": "BUNDLED",
+                    "product": {
+                        "id": "INTELSAT-27597-usageVolume-data",
+                        "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597-usageVolume-data",
+                        "isShared": false,
+                        "isBundle": false,
+                        "usageType": "DATA",
+                        "@baseType": "product",
+                        "@type": "usageVolume",
+                        "bucketCounter": [
+                            {
+                                "valueName": "1401626.776576 KB",
+                                "value": {
+                                    "amount": 1401626.776576,
+                                    "units": "KB"
+                                },
+                                "consumptionPeriod": {
+                                    "startDateTime": "2023-05-18T16:08:35.000Z",
+                                    "endDateTime": "2023-06-09T08:36:31.696Z"
+                                },
+                                "counterType": "USED"
+                            }
+                        ]
                     }
-                ],
-                "@baseType": "product",
-                "@type": "IoTConnection",
-                "productRelationship": [
-                    {
-                        "type": "BUNDLED",
-                        "product": {
-                            "id": "INTELSAT-27597-terminal",
-                            "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597-terminal",
-                            "isBundle": false,
-                            "isCustomerVisible": true,
-                            "productCharacteristic": [
-                                {
-                                    "name": "serialNumber",
-                                    "value": "27597"
-                                },
-                                {
-                                    "name": "name",
-                                    "value": "LW01-Media_Mobil-27597"
-                                },
-                                {
-                                    "name": "latitude",
-                                    "value": "53.11050000"
-                                },
-                                {
-                                    "name": "longitude",
-                                    "value": "8.88130000"
-                                },
-                                {
-                                    "name": "model",
-                                    "value": "TIV-iQDesktop-27597-GS"
-                                },
-                                {
-                                    "name": "state",
-                                    "value": "synced"
-                                },
-                                {
-                                    "name": "mobilityType",
-                                    "value": "Fixed"
-                                },
-                                {
-                                    "name": "imoNumber",
-                                    "value": "0"
-                                },
-                                {
-                                    "name": "mmsi",
-                                    "value": ""
-                                },
-                                {
-                                    "name": "antennaCode",
-                                    "value": ""
-                                },
-                                {
-                                    "name": "lastUpdated",
-                                    "value": "2023-05-18T15:56:51.000Z"
-                                },
-                                {
-                                    "name": "lastSync",
-                                    "value": "2023-05-18T15:56:51.000Z"
-                                }
-                            ],
-                            "customProperty": [],
-                            "@baseType": "product",
-                            "@type": "terminal",
-                            "status": "ACTIVE"
-                        }
-                    },
-                    {
-                        "type": "BUNDLED",
-                        "product": {
-                            "id": "INTELSAT-27597-usageVolume-data",
-                            "href": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/INTELSAT-27597-usageVolume-data",
-                            "isShared": false,
-                            "isBundle": false,
-                            "usageType": "DATA",
-                            "@baseType": "product",
-                            "@type": "usageVolume",
-                            "bucketCounter": [
-                                {
-                                    "valueName": "1401626.776576 KB",
-                                    "value": {
-                                        "amount": 1401626.776576,
-                                        "units": "KB"
-                                    },
-                                    "consumptionPeriod": {
-                                        "startDateTime": "2023-05-18T16:08:35.000Z",
-                                        "endDateTime": "2023-06-09T08:36:31.696Z"
-                                    },
-                                    "counterType": "USED"
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "correlationId": "dbe56aa9-a0c1-4b91-b2b8-1fb3141dd191"
-            }
-        ],
-        "errors": [
-            {
-                "type": "Not Found",
-                "status": 404,
-                "title": "Error",
-                "detail": "Product with iccid 8907160000000000533 not found",
-                "instance": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/eos/product/find",
-                "externalErrors": [],
-                "@type": "problem",
-                "traceId": "15ff4b9d-cbcc-4180-96d3-e2fe7cdcbd4e"
-            }
-        ]
-    }
+                }
+            ],
+            "correlationId": "dbe56aa9-a0c1-4b91-b2b8-1fb3141dd191"
+        }
+    ],
+    "errors": [
+        {
+            "type": "Not Found",
+            "status": 404,
+            "title": "Error",
+            "detail": "Product with iccid 8907160000000000533 not found",
+            "instance": "https://myiot-t.com/api-gw/connection-management-orchestrator/v5/eos/product/eos/product/find",
+            "externalErrors": [],
+            "@type": "problem",
+            "traceId": "15ff4b9d-cbcc-4180-96d3-e2fe7cdcbd4e"
+        }
+    ]
+}
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 
 ## Step 3. Create your connectivity group
 
-When you find the products you want to create a group with through the **list** or specific **find,** you will need the **product ID number**, **Connectivity type**, ****and **Network ID number**. To retrieve this information, use either the ****GET Connection Products** request ****or **the FIND Connection Product** request we used earlier. In this case, we will be using **cURL** to execute operations.
+When you find the products you want to create a group with through the **list** or specific **find**, you will need the **product ID number**, **Connectivity type**, and **Network ID number**. To retrieve this information, use either the **GET Connection Products** request or the **FIND Connection Product** request we used earlier. In this case, we will be using **cURL** to execute operations.
+
+- Create a group with the following cURL command and replace the values of `<your_tenant_name>`, `<your_api_token>`, `<your_product_id_number>`,`<your_product_group_number>`, `<your_network_id_number>`, `<your_router_serial_number>`, `<your_priority_product_id_number>`, `<your_fallback_product_id_number>`, `<your_threshold_level>` and `<your_group_name>` with your data.
 
 
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
+{{< tabs "code-tab-1" >}}
 
+{{< tab "Copy & paste" >}}
 
-- Create a group with the following cURL command and replace the values of `*<your_tenant_name>*`, `<your_api_token>`, `<your_product_id_number>`,`<your_product_group_number>`, `<your_network_id_number>`, `<your_router_serial_number>`, `<your_priority_product_id_number>`, `<your_fallback_product_id_number>`, `<your_threshold_level>` and `<your_group_name>` with your data.
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
 
-
-    curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups' \
-    --header 'Content-Type: application/json;ty=28' \
-    --header 'X-M2M-Origin: CPDemo' \
-    --header 'X-M2M-RI: 123' \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer <your_api_token>' \
-    --data '{
-    //Group structure
-      "dtiot:conGp": {
-        "cnd": "com.telekom.iot.orchestrator.connectivityGroup",
-        "conPs": [
-          //Connectivity products
-          {
-            //coPID = Product ID Number
-            "coPID": "<your_product_id_number>",
-            //coPTe = Connectivity type
-            "coPTe": <your_connectivity_type>,
-            //netID = Network ID Number
-            "netID": "your_network_id_number"
-          },
-          {
-            //coPID = Product ID Number
-            "coPID": "<your_product_id_number>",
-            //coPTe = Connectivity type
-            "coPTe": <your_connectivity_type>,
-            //netID = Network ID Number
-            "netID": "your_network_id_number"
-          }
-        ],
+{{< code >}}
+```bash
+curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups' \
+--header 'Content-Type: application/json;ty=28' \
+--header 'X-M2M-Origin: CPDemo' \
+--header 'X-M2M-RI: 123' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <your_api_token>' \
+--data '{
+//Group structure
+    "dtiot:conGp": {
+    "cnd": "com.telekom.iot.orchestrator.connectivityGroup",
+    "conPs": [
+        //Connectivity products
+        {
+        //coPID = Product ID Number
+        "coPID": "<your_product_id_number>",
+        //coPTe = Connectivity type
+        "coPTe": <your_connectivity_type>,
+        //netID = Network ID Number
+        "netID": "your_network_id_number"
+        },
+        {
+        //coPID = Product ID Number
+        "coPID": "<your_product_id_number>",
+        //coPTe = Connectivity type
+        "coPTe": <your_connectivity_type>,
+        //netID = Network ID Number
+        "netID": "your_network_id_number"
+        }
+    ],
         //Router
         //liCRr = Serial number of the router
         "liCRr": "<your_router_serial_number>",
@@ -359,12 +389,37 @@ When you find the products you want to create a group with through the **list** 
         "errMe": "",
         //rn = Group name(The name of the group of products)
         "rn": "<your_group_name>"
-      }
-    }'
+    }
+}'
+```
+{{</ code >}}
 
-***Note:*** *the* ***Threshold level*** *can be from 1-6 (1 = better**,* *6 = worse)*
+{{< /tab >}}
 
-Example of output
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Please add an example code
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```plain
+Please add an output code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+{{< note "NOTE" >}}
+  - {{< textsm >}}The **Threshold level** can be from 1-6 (1 = better, 6 = worse).{{</ textsm >}}
+{{< /note >}}
 
 
 ## Step 4. Check your group is added to your connectivity groups
@@ -372,20 +427,51 @@ Example of output
 Next, we want to check if the connectivity group you made was successfully added to the list of groups. Again, we will be using **cURL** to execute operations.
 
 
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
-
-
 - Fetch the list of connectivity groups with the following cURL command and replace `<your_tenant_name>`, `<your_application_name>`, and `<your_api_token>`:
 
+---
+{{< tabs "code-tab-1" >}}
 
-    curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups?rcn=4&ty=28' \
-    --header 'Content-Type: application/json' \
-    --header 'X-M2M-Origin: <your_application_name>' \
-    --header 'X-M2M-RI: 123' \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer <your_api_token>'
+{{< tab "Copy & paste" >}}
 
-Example of output
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
+
+{{< code >}}
+```bash
+curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups?rcn=4&ty=28' \
+--header 'Content-Type: application/json' \
+--header 'X-M2M-Origin: <your_application_name>' \
+--header 'X-M2M-RI: 123' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <your_api_token>'
+```
+{{</ code >}}
+
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Please add an example code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```plain
+Please add an output code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
+---
+
 
 
 ## Step 5. Retrieve your connectivity group (Read)
