@@ -427,7 +427,7 @@ Please add an output code
 Next, we want to check if the connectivity group you made was successfully added to the list of groups. Again, we will be using **cURL** to execute operations.
 
 
-- Fetch the list of connectivity groups with the following cURL command and replace `<your_tenant_name>`, `<your_application_name>`, and `<your_api_token>`:
+- Fetch the list of connectivity groups with the following cURL command and replace the values of `<your_tenant_name>`, `<your_application_name>`, and `<your_api_token>` with your data.
 
 {{< tabs "code-tab-1" >}}
 
@@ -474,15 +474,48 @@ Please add an output code
 
 ## Step 5. Retrieve your connectivity group (Read)
 
-To retrieve your connectivity group, you can use the following cURL command and replace `your_tenant_name>`, `<your_group_name>`, and `<your_application_name>` with your data.
+To retrieve your connectivity group, you can use the following cURL command and replace the values of `your_tenant_name>`, `<your_group_name>`, and `<your_application_name>` with your data.
 
 
-    curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name/connectivityGroups/<your_group_name>' \
-    --header 'Content-Type: application/json' \
-    --header 'X-M2M-Origin: <your_application_name>' \
-    --header 'X-M2M-RI: 123' \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer {{key_cloack_token}}'
+{{< tabs "code-tab-1" >}}
+
+{{< tab "Copy & paste" >}}
+
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
+
+{{< code >}}
+```bash
+curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name/connectivityGroups/<your_group_name>' \
+--header 'Content-Type: application/json' \
+--header 'X-M2M-Origin: <your_application_name>' \
+--header 'X-M2M-RI: 123' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{key_cloack_token}}'
+```
+{{</ code >}}
+
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Add example output code
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```plain
+Please add an output code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 
 ## Step 6. Update your connectivity group (Update)
@@ -490,31 +523,86 @@ To retrieve your connectivity group, you can use the following cURL command and 
 If you update your recently created group, you only need to change the **POST request** we made earlier to create a group to a **PUT request.** Again, **cURL** will be used to execute operations.
 
 
-- Copy the information from the previous command to create a group and replace the POST request with a PUT request. Make sure you replace `<your_tenant_name>` and `<your_group_name>` with your data and **make the changes you wish to update**.
+- Copy the information from the previous command to create a group and replace the POST request with a PUT request. Make sure you replace `<your_tenant_name>` and `<your_group_name>` with your data and make the changes you wish to update.
 
+{{< tabs "code-tab-1" >}}
 
-    curl --location --request PUT 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups/<your_group_name>'
+{{< tab "Copy & paste" >}}
 
-Example of output
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
+
+{{< code >}}
+```bash
+curl --location --request PUT 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups/<your_group_name>'
+```
+{{</ code >}}
+
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Add example output code
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```plain
+Please add an output code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 
 ## Step 7. Delete your connectivity group (Delete)
 
-If you want to delete your group, you only need to change the GET request created earlier to retrieve your group into a DELETE request. 
-
-
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
-
+If you want to delete your group, you only need to change the **GET request** created earlier to retrieve your group into a **DELETE request**. 
 
 - To delete your connectivity group you can use the following cURL command and replace `your_tenant_name>`, `<your_group_name>`, and `<your_application_name>` with your data.
 
+{{< tabs "code-tab-1" >}}
 
-    curl --location --request DELETE 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups/<your_group_name>' \
-    --header 'Content-Type: application/json' \
-    --header 'X-M2M-Origin: <your_application_name>' \
-    --header 'X-M2M-RI: 123' \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer {{key_cloack_token}}'
+{{< tab "Copy & paste" >}}
 
-Example of output
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
 
+{{< code >}}
+```bash
+curl --location --request DELETE 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>/connectivityGroups/<your_group_name>' \
+--header 'Content-Type: application/json' \
+--header 'X-M2M-Origin: <your_application_name>' \
+--header 'X-M2M-RI: 123' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{key_cloack_token}}'
+```
+{{</ code >}}
+
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Add example output code
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```plain
+Please add an output code
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
