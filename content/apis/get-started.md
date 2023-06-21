@@ -3,7 +3,7 @@ title: Get started
 weight: 02
 ---
 
-## Connect Your Application to the T IoT Hub
+# Connect Your Application to the T IoT Hub
 
 This tutorial will guide you through the initial steps of using the Connection Management Orchestrator (CMO) and Device Management Orchestrator (DMO) APIs. 
 Topics covered include:
