@@ -2,15 +2,17 @@
 title: SIM Card Activation
 weight: 07
 ---
+
+# SIM Card Activation
+
 This tutorial will guide you on activating a SIM card and verifying its activation status with the Connection Management Orchestrator (CMO) and Device Management Orchestrator (DMO) APIs. We'll cover both synchronous and asynchronous methods in detail.
 
+**Synchronous request** - In the API, calls for operations like activating a SIM card happen immediately. The client application sends the request and waits for an immediate response.
+**Asynchronous request** - In the API, calls for operations like activating a SIM card receive a tracker ID. This tracker ID allows the user to track the operation's progress while being processed in the background.
 
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
-
-
-    - **Synchronous request** - In the API, calls for operations like activating a SIM card happen immediately. The client application sends the request and waits for an immediate response.
-    - **Asynchronous request** - In the API, calls for operations like activating a SIM card receive a tracker ID. This tracker ID allows the user to track the operation's progress while being processed in the background.
-
+{{< note "NOTE" >}}
+  - {{< textsm >}}The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request this is most likely an **expired token**.{{</ textsm >}}
+{{< /note >}}
 
 ## You will learn how to:
 - Retrieve a list of **IoT Connection Products**
