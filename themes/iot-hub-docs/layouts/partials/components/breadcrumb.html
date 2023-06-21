@@ -1,0 +1,37 @@
+{{ $context := .Context }}
+{{ $class := .Class }}
+{{ $base := site.BaseURL }}
+{{ $pageLink := replace $context.Permalink $base "" }}
+{{ $lang := $context.Lang }}
+{{ $context.Scratch.Set "path" "/" }}
+
+
+<ul class="{{ $class }} inline-flex">
+  <li class="mx-1 capitalize">
+    <a class="text-primary " href="{{ $base | relLangURL }}">
+      {{ i18n "home" | default "Home" }}
+    </a>
+  </li>
+  {{ range $index, $element := split $pageLink "/" }}
+    {{ if ne $element $lang }}
+      {{ $context.Scratch.Add "path" $element }}
+    {{ else }}
+      {{ $context.Scratch.Add "path" (add $element "/") }}
+    {{ end }}
+    {{ if and (ne $element "") (ne $element $lang) }}
+      <li class="mx-1  capitalize text-light">
+        <span class="inlin-block mr-1">/</span>
+        {{ if eq $element (path.BaseName $pageLink) }}
+          <span class="text-primary ">
+            {{ . }}
+          </span>
+        {{ else }}
+          <a class="text-primary " href="{{ $context.Scratch.Get `path` }}/">
+            {{ . }}
+          </a>
+        {{ end }}
+      </li>
+      {{ $context.Scratch.Add "path" "/" }}
+    {{ end }}
+  {{ end }}
+</ul>

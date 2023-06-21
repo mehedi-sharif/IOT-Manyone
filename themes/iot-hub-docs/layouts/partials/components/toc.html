@@ -1,0 +1,11 @@
+<aside class="table-of-content">
+  <div class="flex items-center mb-4">
+    <i class="fa-solid fa-align-right mr-2"></i>
+    <span class="font-medium">INDEX</span>
+  </div>
+  {{ if gt .WordCount 0 }}
+  {{.TableOfContents}}
+  {{ else }}
+  <span class="text-dark/25">Nothing to explorer</span>
+  {{ end }}
+</aside>

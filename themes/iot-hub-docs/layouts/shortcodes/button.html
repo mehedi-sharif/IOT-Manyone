@@ -1,0 +1,27 @@
+{{ $label:= .Get 0 }}
+{{ $link:= .Get 1 }}
+{{ $style:= .Get 2 }}
+{{ $class:= .Get 3 }}
+
+{{ range $i, $e:= .Params }}
+  {{ if eq $i "label" }}{{ $label = $e }}{{ end }}
+{{ end }}
+
+{{ range $i, $e:= .Params }}
+  {{ if eq $i "link" }}{{ $link = $e }}{{ end }}
+{{ end }}
+
+{{ range $i, $e:= .Params }}
+  {{ if eq $i "style" }}{{ $style = $e }}{{ end }}
+{{ end }}
+
+{{ range $i, $e:= .Params }}
+  {{ if eq $i "class" }}{{ $class = $e }}{{ end }}
+{{ end }}
+
+
+<a href="{{ $link | absLangURL }}" class="btn {{ if eq $style `outline` }}btn-outline-primary{{ else }}btn-primary{{ end }} {{ $class }}" {{ if strings.HasPrefix $link `http` }} target="_blank" rel="noopener"{{ end }}>{{ $label }} {{ if strings.HasPrefix $link `http` }}
+<svg class="inline -translate-y-px ml-[2px]" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1333 1.66357L9.83333 2.76357L11.5667 4.49691L6.53333 9.53024C6.33333 9.73024 6.33333 10.0302 6.53333 10.2302C6.63333 10.3302 6.76667 10.3636 6.9 10.3636C7.03333 10.3636 7.16667 10.3302 7.26667 10.2302L12.3 5.19691L14.0333 6.93024L15.1333 1.66357ZM2 2.76357V12.7636C2 13.8636 2.9 14.7636 4 14.7636H12C13.1 14.7636 14 13.8636 14 12.7636V8.33024L13 7.33024V12.7636C13 13.3302 12.5667 13.7636 12 13.7636H4C3.43333 13.7636 3 13.3302 3 12.7636V3.76357H9.43333L8.43333 2.76357H2Z" fill="currentColor"/>
+</svg>
+{{end}}</a>

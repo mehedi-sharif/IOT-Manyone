@@ -1,0 +1,59 @@
+# DON'T REMOVE THIS FILE.
+# This file is for render site varibles and plugins
+#
+# The actual configuration files are stored in the `config/_default/` folder.
+
+
+######################### site variables ##############################
+# customize your color and font from here.
+[params.colors.default.theme_color]
+primary = "#e30373"
+body = "#fff"
+border = "#C9C9C9"
+theme_light = "#F7F7F8"
+theme_dark = ""
+
+[params.colors.default.text_color]
+default = "#242426"
+dark = "#323232"
+light = "#717171"
+
+[params.fonts.font_size]
+base = "16"    # default is 16px
+
+
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/swiper/swiper-bundle.css"
+[[params.plugins.css]]
+link = "plugins/glightbox/glightbox.css"
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/brands.css"
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/solid.css"
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "js/search.js"
+[[params.plugins.js]]
+link = "plugins/scrollmenu/scrollmenu.min.js"
+[[params.plugins.js]]
+link = "plugins/swiper/swiper-bundle.js"
+[[params.plugins.js]]
+link = "plugins/glightbox/glightbox.js"
+[[params.plugins.js]]
+link = "js/gallery-slider.js"
+[[params.plugins.js]]
+link = "js/accordion.js"
+[[params.plugins.js]]
+link = "js/tab.js"
+[[params.plugins.js]]
+link = "js/modal.js"
+[[params.plugins.js]]
+link = "plugins/lazy-loader.js"
+[[params.plugins.js]]
+link = "plugins/youtube-lite.js"

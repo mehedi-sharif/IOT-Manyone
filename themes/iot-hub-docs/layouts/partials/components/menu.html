@@ -1,0 +1,48 @@
+{{- $currentNode := . -}}
+<nav id="sidebar">
+  {{- range site.Home.Sections.ByWeight -}}
+  {{ if not .Params.ignoreSearch }}
+  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode -}}
+  {{- end -}}
+  {{- end -}}
+</nav>
+  
+<!-- nav template -->
+{{- define "section-tree-nav" -}}
+{{- $currentNode := .currentnode -}}
+{{- $currentFileUniqueID := "" -}}
+{{- with $currentNode.File -}}{{- $currentFileUniqueID = .UniqueID -}}{{- end -}}
+  {{- with .sect -}}
+  {{- if .IsSection -}}
+    <div class="accordion">
+      <button class="accordion-header" data-accordion>
+        {{.Title}}
+        {{ partial "components/arrow-icon" }}
+      </button>
+      {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+      {{ if ne $numberOfPages 0 }}
+      <div class="accordion-content">
+        <ul class="sidebar-menu-inner">
+          {{ $currentNode.Scratch.Set "pages" .Pages }}
+          {{ if .Sections}}
+            {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
+          {{end}}
+          {{ $pages := ($currentNode.Scratch.Get "pages") }}
+          {{ range $pages.ByWeight }}
+          {{ if not .Params.ignoreSearch }}
+          {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode }}
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  {{- else -}}
+  <li title="{{.Title}}">
+    <a href="{{ .RelPermalink}}" class="{{if eq .File.UniqueID $currentFileUniqueID}}active{{end}}">
+      {{.Title}}
+    </a>
+  </li>
+  {{- end -}}
+  {{- end -}}
+{{- end -}}

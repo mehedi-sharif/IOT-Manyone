@@ -1,0 +1,19 @@
+<div class="code-block group mb-5">
+  <div class="flex justify-between items-center bg-theme-light rounded-t-xl py-1 pl-4 pr-3 border h-[42px]">
+    <div class="code-block-title text-lg capitalize font-bold"></div>
+    <div class="leading-[0]">
+      <button data-action="copy">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.5 25.975C8.1 25.975 7.75 25.825 7.45 25.525C7.15 25.225 7 24.875 7 24.475V9.39998H8.5V24.475H20.35V25.975H8.5ZM11.5 22.975C11.1 22.975 10.75 22.825 10.45 22.525C10.15 22.225 10 21.875 10 21.475V7.47498C10 7.07498 10.15 6.72498 10.45 6.42498C10.75 6.12498 11.1 5.97498 11.5 5.97498H22.5C22.9 5.97498 23.25 6.12498 23.55 6.42498C23.85 6.72498 24 7.07498 24 7.47498V21.475C24 21.875 23.85 22.225 23.55 22.525C23.25 22.825 22.9 22.975 22.5 22.975H11.5ZM11.5 21.475H22.5V7.47498H11.5V21.475Z" fill="#242426"/>
+        </svg>
+        <span class="text-primary font-fold"></span>
+      </button>
+    </div>
+  </div>
+  {{.Inner | markdownify}}
+
+  <button class="code-block-action block focus:outline-0 bg-primary text-white py-2 px-4 rounded-b-xl w-full text-left" data-action="expand">
+    <span class="group-[.expanded]:hidden block"><i class="fa fa-angle-down mr-2"></i> Show more</span>
+    <span class="group-[.expanded]:block hidden"><i class="fa fa-angle-up mr-2"></i> Show less</span>
+  </button>
+</div>

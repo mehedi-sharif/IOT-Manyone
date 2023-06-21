@@ -1,0 +1,10 @@
+<div class="h-full relative rounded border-border border border-solid pt-5 pb-10 px-7 hover:border-transparent hover:bg-theme-light transition-all duration-300">
+  <h3 class="text-primary">{{.Get "title" | markdownify}}</h3>
+  <p class="mb-2">{{.Get "description" | markdownify}}</p>
+
+  <a href="{{.Get `link` | safeURL}}" class="stretched-link" {{ if findRE `^http` (.Get `link`) }}target="_blank" rel="noopener"{{ end }}>
+    <svg class="absolute right-8 bottom-6" width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.0561 8.53938C23.4466 8.14886 23.4466 7.51569 23.0561 7.12517L16.6922 0.761209C16.3016 0.370684 15.6685 0.370684 15.278 0.761209C14.8874 1.15173 14.8874 1.7849 15.278 2.17542L20.9348 7.83228L15.2779 13.4891C14.8874 13.8797 14.8874 14.5128 15.2779 14.9033C15.6685 15.2939 16.3016 15.2939 16.6922 14.9033L23.0561 8.53938ZM0.0234374 8.83228L22.349 8.83228L22.349 6.83228L0.0234376 6.83228L0.0234374 8.83228Z" fill="#242426"/>
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+  {{ $permalink := "" }}
+  {{ range first 1 (where .Pages.ByWeight "Section" .Section) }}
+    {{ $permalink = .RelPermalink }}
+  {{ end }}
+
+  <script>
+    window.location.href = "{{$permalink}}";
+  </script>
+{{ end }}

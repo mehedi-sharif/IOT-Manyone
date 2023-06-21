@@ -1,0 +1,30 @@
+<div 
+  class="overlay opacity-0 invisible block bg-dark/30 fixed top-0 left-0 h-full w-full z-[9999] transition-all"
+  data-toggle="sidebar-menu">
+</div>
+<div class="main-content-block">
+  <div class="flex justify-center">
+    {{ partial "components/sidebar-menu.html" . }}
+    
+    <div class="main-content 2xl:mx-8">
+      {{ $permalink := .RelPermalink | replaceRE "(.*\\/)[^\\/]+\\/$" "$1" }}
+      {{ $permalink = replace $permalink "/docs" "" 1 }}
+      {{ $splitPermalink := split $permalink "/" }}
+
+      {{ $splitPermalinkLength := sub (len $splitPermalink) 2 }}
+      <h1 class="mb-8"><span class="text-dark">T IoT Hub <span class="mx-2 opacity-25">|</span></span>
+      {{ range $i, $e:= $splitPermalink }}
+        {{ humanize . | title }}
+        {{ if and (ne $i 0) (lt $i $splitPermalinkLength) }}<i class='text-base sm:text-[1.5rem] align-middle fa fa-angle-right mx-2 -translate-y-[2px]'></i>{{ end }}
+      {{ end }}
+      </h1>
+      
+      <div class="content">
+        {{ partial "components/headline-hash.html" .Content }}
+        <div class="copy-to-clipboard expandable expanded hidden"></div>
+      </div>
+    </div>
+    
+    {{ partial "components/toc.html" . }}
+  </div>
+</div>

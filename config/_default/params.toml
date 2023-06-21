@@ -1,0 +1,50 @@
+#################### default parameters ################################
+# favicon
+favicon = "images/favicon.jpg"
+# logo
+logo_lg = "images/logo.png"
+logo = "images/header-logo.jpg"
+logo_light = "images/logo-light.png"
+
+# use `px` or `x` with logo_width, example: "100px".
+# Note: logo_width is not work with .svg file
+logo_width = "76px"
+logo_height = "76px"
+# if logo_webp set false, will not generate WEBP version of logo | default is true
+logo_webp = true
+# logo text will only show when logo is missing.
+logo_text = "IoT Hub Docs"
+# custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
+custom_script = ""
+# copyright
+copyright = "[Deutsche Telekom IoT GmbH](https://iot.telekom.com/en) | All rights reserved"
+
+redirect_page_url = "welcome/about/"
+
+# search
+[search]
+enable = true
+primary_color = "#e30373"
+# include_sections = ["guideline", "welcome"]
+include_all_sections = true
+show_image = true
+show_description = true
+show_tags = true
+show_categories = true
+
+
+# seo meta data for OpenGraph / Twitter Card
+[metadata]
+keywords = ["Deutsche Telekom IoT GmbH", "T IoT Hub", "Telekom IoT Hub"]
+description = "Resources for connecting your machines and devices to the Internet of Things"
+author = "T IoT Hub"
+image = "images/og-image.png"
+
+
+# site verifications
+[site_verification]
+google = ""   # Your verification code
+bing = ""     # Your verification code
+baidu = ""    # Your verification code
+facebook = "" # Your verification code
+mastodon = "" # Your verification code

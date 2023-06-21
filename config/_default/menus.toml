@@ -1,0 +1,25 @@
+# footer menu
+
+[[footer]]
+pre = ""
+name = "Contact"
+url = "https://iot.telekom.com/en/contact"
+weight = 1
+
+[[footer]]
+pre = ""
+name = "Terms & Conditions"
+url = "https://www.telekom.de/is-bin/INTERSHOP.enfinity/WFS/EKI-PK-Site/-/-/-/ViewAGB-Start?wt_mc=alias_agb/direkt&AGBID=2455"
+weight = 2
+
+[[footer]]
+name = "Legal Notice"
+pre = ""
+url = "https://iot.telekom.com/en/legal-notice"
+weight = 3
+
+[[footer]]
+name = "Data privacy"
+pre = "/images/footer/data-privacy.png"
+url = "https://www.telekom.com/en/deutsche-telekom/data-privacy-information-1744"
+weight = 4

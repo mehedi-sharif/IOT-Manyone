@@ -1,0 +1,38 @@
+<footer class="bg-black pt-16 pb-6">
+  <div class="px-8">
+    <div class="mb-16 text-center">
+      <a href="/" class="inline-block">
+        {{ partial "image.html" (dict "Src" site.Params.logo_light "Alt" site.Title) }}
+      </a>
+    </div>
+    <div class="row items-center">
+      <div class="order-1 lg:order-0 text-center lg:text-left lg:col-6 lg:mb-0">
+        <div class="text-white">
+          © <span class="set-year"></span> {{ site.Params.copyright | markdownify }}
+        </div>
+      </div>
+      <div class="order-0 lg:order-1 text-center lg:text-right lg:col-6 mb-4 lg:mb-0">
+        <ul>
+          {{ range site.Menus.footer }}
+            <li class="px-3 py-[5px] inline-block">
+              <a
+                class="text-white hover:underline"
+                {{ if findRE `^http` .URL }}
+                  target="_blank" rel="noopener"
+                {{ end }}
+                href="{{ if findRE `^#` .URL }}
+                  {{ if not $.IsHome }}
+                    {{ site.BaseURL | relLangURL }}
+                  {{ end }}{{ .URL }}
+                {{ else }}
+                  {{ .URL | relLangURL }}
+                {{ end }}"
+                >{{ .Name }}</a
+              >
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

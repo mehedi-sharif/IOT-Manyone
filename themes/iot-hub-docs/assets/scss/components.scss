@@ -1,0 +1,261 @@
+main {
+  min-height: 73vh;
+}
+
+// section style
+.section {
+  @apply py-24 xl:py-28;
+  &-sm {
+    @apply py-16 xl:py-20;
+  }
+}
+
+// container
+.container {
+  @apply mx-auto 2xl:max-w-[1320px] px-4;
+}
+
+// swiper pagination
+.swiper-pagination-bullet {
+  @apply h-2.5  w-2.5 bg-theme-light opacity-100;
+
+  &-active {
+    @apply h-4  w-4 bg-primary;
+  }
+}
+
+.stretched-link::after {
+  content: "";
+  @apply z-10 absolute inset-0 bg-transparent pointer-events-auto;
+}
+
+// main-content-block
+.main-content-block {
+  max-width: 1660px;
+  width: 100%;
+  margin: 60px auto;
+  @apply px-1 sm:px-4 md:px-7;
+  .main-content {
+    @apply px-4 lg:px-8 w-[calc(768px_-_150px)] md:w-full md:max-w-[768px] lg:max-w-[600px] xl:max-w-[calc(768px_+_2rem)] min-h-[60vh];
+    [id]::before {
+      content: '';
+      display: block;
+      height: 100px;
+      margin-top: -100px;
+      visibility: hidden;
+    }
+  }
+  .sidebar-menu {
+    width: 300px;
+    padding-right: 20px;
+  }
+  .table-of-content {
+    width: 250px;
+    padding-right: 15px;
+  }
+  .sidebar-menu,
+  .table-of-content {
+    @apply sticky top-[136px] self-start overflow-y-auto mt-0 max-h-[calc(100vh_-_180px)];
+    &::-webkit-scrollbar {
+      @apply w-1;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px #c7c7c7;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c7c7c7;
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #878787;
+    }
+  }
+  @media (max-width: 1024px) {
+    .table-of-content {
+      @apply hidden;
+    }
+  }
+  @media (max-width: 768px) {
+    .sidebar-menu {
+      @apply fixed top-0 -left-full max-h-full h-full bg-white z-[99999] shadow-xl px-6 py-8 transition-all duration-300;
+    }
+  }
+  @media (max-width: 540px) {
+    .sidebar-menu {
+      @apply w-[280px];
+    }
+  }
+}
+
+.sidebar-menu {
+  .accordion {
+    @apply overflow-hidden;
+    &:first-child {
+      .accordion-header {
+        padding-top: 0 !important;
+      }
+    }
+    @apply border-transparent border-l-0 border-r-0 border-t-0;
+    &.active {
+      @apply border-border/40 border-b border-l-0 border-r-0 border-t-0;
+    }
+    &-header {
+      @apply text-dark border-border/40 border-b px-0 py-3 hover:text-primary transition-colors duration-300 text-left leading-tight;
+    }
+    &-content {
+      @apply px-0;
+    }
+    &.active > .accordion-icon {
+      transform: rotate(0deg);
+    }
+    &.active > .accordion-content {
+      max-height: 100vh;
+    }
+    // &.active > .accordion-header {
+    //   @apply text-primary;
+    // }
+    .accordion {
+      &:last-child {
+        .accordion-header {
+          margin-bottom: -1px;
+        }
+      }
+      &.active {
+        margin-bottom: -1px;
+      }
+    }
+  }
+  .sidebar-menu-inner {
+    @apply ml-4;
+    li {
+      &:not(:last-child) {
+        @apply border-border/40 border-b;
+      }
+      a {
+        @apply text-dark/75 py-[10px] block font-medium hover:text-primary transition-colors duration-300;
+        &.active {
+          @apply text-primary;
+        }
+      }
+    }
+  }
+}
+
+// copy to clipboard
+.data-clipboard-text {
+  @apply ml-3 text-base align-middle hidden text-primary cursor-pointer;
+}
+
+.highlight {
+  @apply relative;
+}
+.copy-to-clipboard {
+  @apply bg-primary text-white cursor-pointer px-2 py-1 text-xs leading-none rounded absolute top-2 right-2;
+}
+:not(pre)>code+span.copy-to-clipboard {
+  @apply hidden;
+}
+
+// content style
+p:empty {
+  @apply hidden;
+}
+.content {
+  * {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+  }
+  img {
+    border-radius: 0;
+    width: 100%;
+  }
+  a {
+    @apply text-primary hover:text-[#2237df] transition-colors duration-300;
+  }
+  .accordion {
+    @apply rounded mb-3 border-border/70;
+    &-header {
+      @apply py-3;
+    }
+  }
+}
+.content {
+  @apply prose max-w-none;
+  @apply prose-headings:mb-5 prose-headings:mt-10;
+  @apply prose-h1:text-h1-sm md:prose-h1:text-h1;
+  @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
+  @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
+
+  @apply prose-img:max-w-full prose-img:rounded;
+
+  @apply prose-hr:border-border prose-hr:my-5;
+
+  @apply prose-p:text-base prose-p:text-text;
+  @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-theme-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-dark;
+  
+  @apply prose-pre:py-0 prose-pre:px-6;
+  @apply prose-code:after:hidden prose-code:before:hidden prose-code:px-1 prose-code:text-primary prose-code:font-normal;
+  pre {
+    @apply prose-code:text-[#f5a97f];
+  }
+
+  @apply prose-strong:text-dark;
+  @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary;
+  @apply prose-li:text-text;
+
+  @apply prose-table:text-base prose-table:text-[#242426];
+  @apply prose-thead:border-none prose-thead:uppercase prose-thead:bg-[#434344];
+  @apply prose-th:px-4 prose-th:py-2 prose-th:text-theme-light;
+  @apply prose-tr:border-none;
+  @apply prose-td:relative prose-td:z-10 prose-td:px-4 prose-td:py-3;
+  
+  .btn {
+    @apply no-underline hover:text-white #{!important};
+  }
+  table {
+    @apply prose-code:text-text prose-code:px-0;
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          @apply bg-[#ededed]
+        }
+        &:nth-child(even) {
+          @apply bg-theme-light;
+        }
+      }
+    }
+  }
+  pre {
+    @apply overflow-x-auto rounded-none;
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(#c7c7c7, 0.4);
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(#c7c7c7, 0.7);
+    }
+  }
+}
+
+.code-block {
+  pre {
+    @apply rounded-b-xl overflow-y-hidden mb-0;
+  }
+  &.expandable pre {
+    @apply max-h-[420px] rounded-none;
+  }
+  &.expanded pre {
+    @apply max-h-[none];
+  }
+  .highlight + p {
+    margin-top: 0;
+  }
+}

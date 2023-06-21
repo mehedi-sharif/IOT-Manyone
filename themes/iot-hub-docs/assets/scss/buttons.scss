@@ -1,0 +1,16 @@
+.btn {
+  @apply inline-block rounded-md border border-transparent px-5 py-2 font-semibold transition text-center;
+}
+
+.btn-sm {
+  @apply rounded-sm px-4 py-1.5 text-sm;
+}
+
+.btn-primary {
+  @apply border-primary bg-primary text-white;
+}
+
+.btn-outline-primary {
+  @apply border-border bg-transparent hover:bg-primary hover:text-white hover:border-primary;
+  color: #000 !important;
+}

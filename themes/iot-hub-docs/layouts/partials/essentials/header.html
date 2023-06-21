@@ -1,0 +1,49 @@
+<header class="header sticky top-0 z-30 shadow">
+  <nav class="navbar container">
+    <!-- logo -->
+    <div class="order-0">
+      <!-- navbar brand/logo -->
+      <a class="navbar-brand flex items-center" href="{{ site.BaseURL | relLangURL }}">
+        {{ partial "logo" }} <span class="ml-4 font-extrabold text-primary text-lg sm:text-3xl">T IoT Hub</span>
+      </a>
+    </div>
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      id="show-button"
+      for="nav-toggle"
+      class="order-2 block cursor-pointer items-center md:order-1 md:hidden ml-3 lg:ml-5 bg-primary h-14 w-14 text-center pt-2 text-white">
+      <svg class="h-6 mx-auto fill-current" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <span class="text-xs block">MENU</span>
+    </label>
+    <label
+      id="hide-button"
+      for="nav-toggle"
+      class="order-2 hidden cursor-pointer items-center md:order-1 ml-3 lg:ml-5 bg-primary h-14 w-14 text-center pt-2 text-white">
+      <svg class="h-6 mx-auto fill-current" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+      <span class="text-xs block">CLOSE</span>
+    </label>
+    <!-- /navbar toggler -->
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      {{ with site.Params.search }}
+        {{ if .enable }}
+          <button
+            aria-label="search"
+            class="inline-block text-dark hover:text-primary border-theme-light border rounded px-3 sm:px-4 py-3 leading-none"
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i><span class="hidden sm:inline ml-2">Search</span>
+          </button>
+        {{ end }}
+      {{ end }}
+    </div>
+  </nav>
+</header>
