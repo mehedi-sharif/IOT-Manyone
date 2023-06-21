@@ -2,13 +2,18 @@
 title: Work with connectivity groups
 weight: 05
 ---
+
+# Work with connectivity groups
+
 This tutorial will guide you on how to work with **Connectivity groups** using the CMO and DMO APIs. You'll learn the fundamental CRUD operations and how to view your **Connectivity groups** and **Connection products.**
 
 
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
+{{< note "NOTE" >}}
+  - {{< textsm >}}The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.{{</ textsm >}}
+{{< /note >}}
 
 
-## You will learn how to:
+## You will learn how to
 - Retrieve a list of connection products
 - Fetch two specific products
 - Create a connectivity group
@@ -29,76 +34,106 @@ Make sure that you:
 3. Register Application Entity (AE) in your environment.
 4. Possess an HTTP Client, such as [Postman](https://www.postman.com/) or [cURL](https://curl.se/).
 
+{{< note "NOTE" >}}
+  - {{< textsm >}}This tutorial will refer to the use of cURL. If you use a different platform, the setup might vary.{{</ textsm >}}
+{{< /note >}}
 
-> **Note:** This tutorial will refer to the use of cURL. If you use a different platform, the setup might vary.
 
 
 ## Step 1. Retrieve a list of connection products to create your group
 
 If you need clarification on which product to create a group with, you can use this request to fetch a list of all your connected products. From this list, select the products you want to group. In our case, we will be using cURL to execute operations. To check if cURL is installed on your hardware, open a terminal or CMD and run:
 
-
+{{< code >}}
+```bash
     $curl --version
+```
+{{</ code >}}
 
-
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
+{{< note "NOTE" >}}
+  - {{< textsm >}}The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.{{</ textsm >}}
+{{< /note >}}
 
 
 - Open cURL or your preferred HTTP client.
-- Retrieve the list of **connection products** with the following cURL command and replace the values of `*<your_tenant_name>*` and `<your_api_token>` with your own data.
+- Retrieve the list of **connection products** with the following cURL command and replace the values of `<your_tenant_name>` and `<your_api_token>` with your own data.
 
+{{< tabs "code-tab-1" >}}
 
-    //Enter your tenant name
-    curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v5/<your_tenant_name>/product?pageSize=5&fields=id%2CconnectivityType%2Cstatus' \
-    --header 'Content-Type: application/json' \
-    --header 'Accept: application/json' \
-    //Enter your API Token.
-    --header 'Authorization: Bearer <your_api_token>'
+{{< tab "Copy & paste" >}}
 
-Example of output
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
 
+{{< code >}}
+```bash
+//Enter your tenant name
+curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v5/<your_tenant_name>/product?pageSize=5&fields=id%2CconnectivityType%2Cstatus' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+//Enter your API Token.
+--header 'Authorization: Bearer <your_api_token>'
+```
+{{</ code >}}
 
-    {
-        "entities": [
-            {
-                //the ID of a connectivity product.
-                //Copy the "id" for the next step.
-                "id": "JASPER-8997112212741433747",
-                "status": "ACTIVE",
-                "connectivityType": "CELLULAR"
-            },
-            {
-                //the ID of a connectivity product
-                //Copy the "id" for the next step.
-                "id": "JASPER-8997112212741433749",
-                "status": "ACTIVE",
-                "connectivityType": "CELLULAR"
-              }
-        ],
-        "statistics": {
+{{< /tab >}}
+
+{{< tab "Example" >}}
+
+{{< code >}}
+```plain
+Please add example
+```
+{{< /code >}}
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
+```json
+{
+    "entities": [
+        {
+            //the ID of a connectivity product.
+            //Copy the "id" for the next step.
+            "id": "JASPER-8997112212741433747",
+            "status": "ACTIVE",
+            "connectivityType": "CELLULAR"
+        },
+        {
+            //the ID of a connectivity product
+            //Copy the "id" for the next step.
+            "id": "JASPER-8997112212741433749",
+            "status": "ACTIVE",
+            "connectivityType": "CELLULAR"
+        }
+    ],
+    "statistics": {
             "currentPage": 1,
             "pageSize": 1
-        },
-        "links": [
-            {
-                "type": "self",
-                "url": "https://myiot-t.com/api-gw/connection-management-orchestrator/eos/product?pageSize=5&fields=id,connectivityType,status"
-            }
-        ]
-    }
+            },
+    "links": [
+        {
+            "type": "self",
+            "url": "https://myiot-t.com/api-gw/connection-management-orchestrator/eos/product?pageSize=5&fields=id,connectivityType,status"
+        }
+    ]
+}
+```
+{{< /code >}}
 
-***Note:*** An e*xample of an ID can be “JASPER-8997112212741433749”.*
+{{< /tab >}}
+
+{{< /tabs >}}
+
+
+- An example of an ID can be “JASPER-8997112212741433749”.*
 
 
 ## Step 2. Fetch specific products to create a group (Using product ID)
 
 **If you know** the network ID’s of your products. Use this request to fetch their respective product ID´s. In this case, we will be using **cURL** to execute operations.
 
-
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
-
-
-- Find your products with the following cURL command and replace the values of `*<your_tenant_name>*`,`<your_api_token>`, and `<your_product_id>` with your own data.
+- Find your products with the following cURL command and replace the values of `<your_tenant_name>`,`<your_api_token>`, and `<your_product_id>` with your own data.
 
 
     //Enter your tenant name
