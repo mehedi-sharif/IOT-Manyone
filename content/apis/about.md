@@ -2,6 +2,9 @@
 title: About
 weight: 01
 ---
+
+# About
+
 Welcome to T IoT Hub, a cutting-edge platform that opens up possibilities for developers seeking to harness the power of the Internet of Things (IoT). Our platform provides seamless integration with two powerful APIs (Application Programming Interfaces), empowering you to interact with the T IoT Hub and seamlessly integrate your applications with IoT functionality.
 
 
