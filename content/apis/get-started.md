@@ -48,7 +48,7 @@ To access the DMO and CMO API, you must first create an application on the Appli
 ![](https://paper-attachments.dropboxusercontent.com/s_0C7C1C4F53B15444899ED61E229344347BC79B092D689F87A88BEACD2E08EE05_1685960815973_Client+ID.png)
 
 
-Step 2. Retrieve an API Token (Locally)
+## Step 2. Retrieve an API Token (Locally)
 You must retrieve an API token to send requests and interact with the API. In our case, we will be using cURL to execute operations. To check if cURL is installed on your hardware, open a terminal or CMD and run:
 
 
