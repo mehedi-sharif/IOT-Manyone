@@ -11,7 +11,7 @@ Welcome to T IoT Hub, a cutting-edge platform that opens up possibilities for de
     
   {{< quick-link-card 
     title="CMO | Connectivity Management Orchestrator API" 
-    link="https://www.google.com/" 
+    link="/docs/apis/cmo-api/about/" 
     description="Empowers you to take control of your IoT devices' connectivity settings. With this API, you can easily manage activation, suspension, and modification. It provides a flexible solution to tailor connectivity to your specific requirements." >}}
 
   {{</ div >}}
@@ -19,7 +19,7 @@ Welcome to T IoT Hub, a cutting-edge platform that opens up possibilities for de
     
   {{< quick-link-card 
     title="DMO | Device Management Orchestrator API" 
-    link="#" 
+    link="/docs/apis/dmo-api/about/" 
     description="Facilitates seamless data exchange between IoT applications. It allows you to implement various use cases, including connectivity group management and collection of satellite metrics. By leveraging the DMO API, you can enable smooth communication and collaboration among your IoT applications." >}}
 
   {{</ div >}}
@@ -39,7 +39,7 @@ Welcome to T IoT Hub, a cutting-edge platform that opens up possibilities for de
   Automated configuration of IoT devices. Instead of manually configuring each device individually. APIs enable you to apply configurations in a systematic and efficient manner. This saves time, reduces human error, and simplifies the deployment process. 
   {{</ textsm >}}
   {{</ markdown >}}
-
+  
   {{</ div >}}
   {{< div class="lg:col-4 mb-7" >}}
 
