@@ -54,7 +54,7 @@ curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <your_api_token>'
 ```
-{{</ code >}}
+{{< /code >}}
 
 {{< /tab >}}
 
@@ -105,7 +105,7 @@ curl --location 'https://myiot-t.com/api-gw/connection-management-orchestrator/v
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <your_api_token>'
 ```
-{{</ code >}}
+{{< /code >}}
 
 {{< /tab >}}
 
@@ -184,7 +184,7 @@ curl --location --request PATCH 'https://myiot-t.com/api-gw/connection-managemen
   }
 ]'
 ```
-{{</ code >}}
+{{< /code >}}
 
 {{< /tab >}}
 

@@ -38,9 +38,11 @@ Make sure that you:
 
 To identify connectivity products that need updating, you need to obtain a list of these products. In our case, we will be using cURL to execute operations. To check if cURL is installed on your hardware, open a terminal or CMD and run:
 
-
+{{< code >}}
+```bash
     $curl --version
-
+```
+{{</ code >}}
 
 > A reminder, the API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
 
