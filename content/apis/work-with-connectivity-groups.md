@@ -353,7 +353,7 @@ curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<y
     "dtiot:conGp": {
     "cnd": "com.telekom.iot.orchestrator.connectivityGroup",
     "conPs": [
-        //Connectivity products
+        Connectivity products
         {
         //coPID = Product ID Number
         "coPID": "<your_product_id_number>",
@@ -429,7 +429,6 @@ Next, we want to check if the connectivity group you made was successfully added
 
 - Fetch the list of connectivity groups with the following cURL command and replace `<your_tenant_name>`, `<your_application_name>`, and `<your_api_token>`:
 
----
 {{< tabs "code-tab-1" >}}
 
 {{< tab "Copy & paste" >}}
@@ -470,7 +469,6 @@ Please add an output code
 {{< /tab >}}
 
 {{< /tabs >}}
----
 
 
 
