@@ -38,30 +38,31 @@ To access the DMO and CMO API, you must first create an application on the Appli
 - In the website header, click on [your name].
 - Click on **Application access management**.
 - In the Application access management, click on **Add new application access**.
-- Enter an **Application name** ****(Nickname for your app) ****and enter the email of the person responsible for the Application.
+- Enter an **Application name** **(Nickname for your app)** and enter the email of the person responsible for the Application.
 - Select the permissions you want the developer to access.
 ![](https://paper-attachments.dropboxusercontent.com/s_0C7C1C4F53B15444899ED61E229344347BC79B092D689F87A88BEACD2E08EE05_1685958727744_Application+Management.png)
 
-- Once you successfully create the account, you should have a **Client ID** `**<your_client_id>**` and a **Client Secret** `**<your_client_secret>**`.
+- Once you successfully create the account, you should have a **Client ID** `<your_client_id>` and a **Client Secret** `<your_client_secret>`.
     
-    ***Note:*** *To view your client credentials**,* *click on the* ***Application Name****.*
+- To view your client credentials, click on the **Application Name**
 ![](https://paper-attachments.dropboxusercontent.com/s_0C7C1C4F53B15444899ED61E229344347BC79B092D689F87A88BEACD2E08EE05_1685960815973_Client+ID.png)
 
 
 ## Step 2. Retrieve an API Token (Locally)
 You must retrieve an API token to send requests and interact with the API. In our case, we will be using cURL to execute operations. To check if cURL is installed on your hardware, open a terminal or CMD and run:
 
-
+{{< code >}}
+```bash
     $curl --version
+```
+{{</ code >}}
 
-
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
-
+{{< note "NOTE" >}}
+  - {{< textsm >}}The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.{{</ textsm >}}
+{{< /note >}}
 
 - First, open the CMD line or your preferred HTTP client.
-- Set up the API endpoints with the following cURL command and replace the values of `**<your_client_id>**` and  `**<your_client_secret>**` with your data.
-
-
+- Set up the API endpoints with the following cURL command and replace the values of `<your_client_id>` and  `<your_client_secret>` with your data.
 
 {{< tabs "code-tab-1" >}}
 
@@ -112,7 +113,6 @@ Please add an output code
 {{< /tabs >}}
 
 - Retrieve an **API Token** with the following cURL command and replace the values of `<your_client_secret>` and `<your_client_id>`
-    ***Note:*** *The API token has an expiration* *time* *of 5 minutes* ***(300 seconds).*
     
 {{< tabs "code-tab-1" >}}
 
@@ -138,6 +138,14 @@ curl --location 'https://iam-br-iot.myiot-t.com/auth/realms/iothub/protocol/open
 {{< tab "Example" >}}
 
 {{< code >}}
+Example code here
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< tab "Output" >}}
+
+{{< code >}}
 ```bash
 {
         "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4Y1Z5QWdPZW13dHV4VVIwX2x5NEYtWkNzeTVWR1dQakxVaDNkc285anE0In0.eyJleHAiOjE2ODYyOTk3NjIsImlhdCI6MTY4NjI5OTQ2MiwianRpIjoiNzk5NWM0ODYtYjM1YS00OTQxLTlhNGUtM2UyMTYxYTFjZDRkIiwiaXNzIjoiaHR0cHM6Ly9pYW0tYnItaW90Lm15aW90LXQuY29tL2F1dGgvcmVhbG1zL2lvdGh1YiIsInN1YiI6ImE4MDFhNzA4LWI1MGQtNDdiNi04MDZjLTFhZjhjNjBlOWM3NyIsInR5cCI6IkJlYXJlciIsImF6cCI6IjU3MjJlMjM3LWM5M2EtNGJmZi1hM2JkLThjM2Y0YTM4NWFiMyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicm8lY29ubmVjdGlvbi1tYW5hZ2VtZW50LW9yY2hlc3RyYXRvciIsInJ3JWNvbm5lY3Rpb24tbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiLCJybyVkZXZpY2UtbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiLCJydyVkZXZpY2UtbWFuYWdlbWVudC1vcmNoZXN0cmF0b3IiXX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJ0ZW5hbnRzIjpbImVvcyJdLCJjbGllbnRIb3N0IjoiMjEzLjIzOS4xMDMuMjM4IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRJZCI6IjU3MjJlMjM3LWM5M2EtNGJmZi1hM2JkLThjM2Y0YTM4NWFiMyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC01NzIyZTIzNy1jOTNhLTRiZmYtYTNiZC04YzNmNGEzODVhYjMiLCJjbGllbnRBZGRyZXNzIjoiMjEzLjIzOS4xMDMuMjM4In0.lbPJu6PMBbmMOClsrmKNd2QhOeH71MORQII7i0WkSmVrPKlS1uWao6Cv1yxwcPIEjH6hXYRwUe1tKhz_HoGELBjWmA8-4WAx1lRxIFXbim-RTe9MmDBOBawKU8qqSN7aRqKewuKsvhmsiY_iSEksw1Pfexi3UNG27BCCb_L3vYvtEeZAgRysecCQXlDwYeHe3XTdMIkAILvB3adiobIRDjmGtx9GjjYPuM-il2aG_813zDXMP0xFUsQqbf2pRUlSRAcWtgeXkISRTvqXVdaeIe7qgN2lCCJB6BwZah5eyEaFQhZKndY2jSHx1wZ8v2x0K85Uj0zIjdlJquHFWMlinw",
@@ -153,17 +161,11 @@ curl --location 'https://iam-br-iot.myiot-t.com/auth/realms/iothub/protocol/open
 
 {{< /tab >}}
 
-{{< tab "Output" >}}
-
-{{< code >}}
-```plain
-Please add an output code
-```
-{{< /code >}}
-
-{{< /tab >}}
-
 {{< /tabs >}}
+
+{{< note "NOTE" >}}
+  - {{< textsm >}}The API token has an expiration time of 5 minutes (300 seconds).{{</ textsm >}}
+{{< /note >}}
 
 
 
@@ -171,12 +173,15 @@ Please add an output code
 
 To interact with the **DMO API**, you need to register your Application.
 
+{{< tabs "code-tab-1" >}}
 
-> The API Token has an expiration time of 300 seconds (5 minutes). If you get error 401 when trying to make a request, this is most likely an **expired token**.
+{{< tab "Copy & paste" >}}
 
+{{< div class="mb-4" >}}optional text Example{{</ div >}}
 
-
-    //Enter your tenant name
+{{< code >}}
+```bash
+ //Enter your tenant name
     curl --location 'https://myiot-t.com/api-gw/device-management-orchestrator/v3/<your_tenant_name>' \
     --header 'Content-Type: application/json;ty=2' \
     //Enter the Name of your application. The name has to start with "C".
@@ -193,14 +198,24 @@ To interact with the **DMO API**, you need to register your Application.
             "rn": "PostmanDemo<your_application_name>"
         }
     }'
+```
+{{</ code >}}
 
+{{< /tab >}}
 
-- Status code “201 created” means you registered your application successfully.
+{{< tab "Example" >}}
 
-Example of output
+{{< code >}}
+Example code here
+{{< /code >}}
 
+{{< /tab >}}
 
-    {
+{{< tab "Output" >}}
+
+{{< code >}}
+```json
+{
         "m2m:ae": {
             "api": "NTest",
             "rn": "TestApp",
@@ -212,6 +227,15 @@ Example of output
             "lt": "20230609T083219,210000"
         }
     }
+```
+{{< /code >}}
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+- Status code “201 created” means you registered your application successfully.
+
 
 The **Application ID** you create during application registration is the ID you must use in the **X-M2M-Origin header** of all subsequent requests to the DMO API. Otherwise, the system will reject your request. This is important because DMO API must “know” the application using it for every request.
 
