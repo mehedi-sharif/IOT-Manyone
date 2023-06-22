@@ -7,16 +7,16 @@
     {{ partial "components/sidebar-menu.html" . }}
     
     <div class="main-content 2xl:mx-8">
-      {{ $permalink := .RelPermalink | replaceRE "(.*\\/)[^\\/]+\\/$" "$1" }}
-      {{ $permalink = replace $permalink "/docs" "" 1 }}
-      {{ $splitPermalink := split $permalink "/" }}
+      {{ $splitDir := split .File.Dir "/" }}
 
-      {{ $splitPermalinkLength := sub (len $splitPermalink) 2 }}
-      <h1 class="mb-8"><span class="text-dark">T IoT Hub <span class="mx-2 opacity-25">|</span></span>
-      {{ range $i, $e:= $splitPermalink }}
-        {{ humanize . | title }}
-        {{ if and (ne $i 0) (lt $i $splitPermalinkLength) }}<i class='text-base sm:text-[1.5rem] align-middle fa fa-angle-right mx-2 -translate-y-[2px]'></i>{{ end }}
-      {{ end }}
+      <h1 class="mb-8 flex flex-wrap">
+        <span class="text-dark">T IoT Hub<span class="mx-4 opacity-25">|</span></span>
+        <span>
+          {{ range $i, $e:= $splitDir }}
+            {{ if ne $i 0 }}<i class='text-base sm:text-[1.5rem] align-middle fa fa-angle-right mx-2 -translate-y-[2px]'></i>{{ end }}
+            {{ humanize . | title }}
+          {{ end }}{{.Title}}
+        </span>
       </h1>
       
       <div class="content">
