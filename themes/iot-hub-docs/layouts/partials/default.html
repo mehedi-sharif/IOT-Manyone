@@ -10,7 +10,6 @@
       {{ $splitDir := split .File.Dir "/" }}
 
       <h1 class="mb-8 flex flex-wrap">
-        <span class="text-dark">T IoT Hub<span class="mx-4 opacity-25">|</span></span>
         <span>
           {{ range $i, $e:= $splitDir }}
             {{ if ne $i 0 }}<i class='text-base sm:text-[1.5rem] align-middle fa fa-angle-right mx-2 -translate-y-[2px]'></i>{{ end }}
