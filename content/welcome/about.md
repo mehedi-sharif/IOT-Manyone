@@ -9,7 +9,11 @@ It solves a critical challenge: making systems of many different producers commu
 
 T IoT Hub also offers application programming interfaces (APIs) to orchestrate a wide range of IoT connectivity and device management platforms for mobile and stationary devices.
 
+- T IoT Hub cuts through the complexity of deploying IoT solutions and unleashes the potential of your data in the easiest way possible.
 
+- It solves a critical challenge: making systems of many different producers communicate with one another.  It works as a connector and translator for many partners, network operators and platform providers to bring your systems together into a functioning whole. 
+
+- T IoT Hub also offers application programming interfaces (APIs) to orchestrate a wide range of IoT connectivity and device management platforms for mobile and stationary devices.
 
 ## Documentation
 
