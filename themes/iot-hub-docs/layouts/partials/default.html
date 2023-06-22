@@ -14,7 +14,11 @@
         <span>
           {{ range $i, $e:= $splitDir }}
             {{ if ne $i 0 }}<i class='text-base sm:text-[1.5rem] align-middle fa fa-angle-right mx-2 -translate-y-[2px]'></i>{{ end }}
-            {{ humanize . | title }}
+            {{ $title := humanize . | title }}
+            {{ $title = replace $title "Apis" "APIs" }}
+            {{ $title = replace $title "Cmo" "CMO" }}
+            {{ $title = replace $title "Dmo" "DMO" }}
+            {{ $title }}
           {{ end }}{{.Title}}
         </span>
       </h1>
