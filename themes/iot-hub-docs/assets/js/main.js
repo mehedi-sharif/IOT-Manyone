@@ -7,13 +7,13 @@
   const overlay = document.querySelector(".overlay");
   const sidebarMenu = document.querySelector(".sidebar-menu");
 
-  navToggle.addEventListener("click", () => {
+  navToggle?.addEventListener("click", () => {
     overlay.style.opacity = "1";
     overlay.style.visibility = "visible";
     sidebarMenu.style.left = "0";
   });
 
-  overlay.addEventListener("click", () => {
+  overlay?.addEventListener("click", () => {
     overlay.style.opacity = "";
     overlay.style.visibility = "";
     sidebarMenu.style.left = "-100%";
